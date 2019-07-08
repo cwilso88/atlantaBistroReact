@@ -3,15 +3,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|PT+Sans:400,700|Rozha+One');
 @import "variables";
 @import "grid";
+@import "Global";
 @import "Header";
 @import "Topimg";
-// @import "OurStory";
-// @import "SpecialMenu";
-// @import "RandomQuote";
-// @import "Reviews";
+@import "OurStory";
+@import "RandomQuote";
+@import "Reviews";
 @import "ContactUs";
-// @import "Footer";
-@import "Global";
+@import "Footer";
+@import "SpecialMenu";
 
 
 

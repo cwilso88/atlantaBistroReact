@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 export default class OurStory extends Component {
     render() {
@@ -14,7 +13,7 @@ export default class OurStory extends Component {
                         <div className="quote">
                             "Atlanta Bistro is the best in town. The service and food are always amazing." - <strong>Shelly Green</strong>
                         </div>
-                        <Link to="#" className="reserve-btn">Reserve</Link>
+                        <a to="#" className="reserve-btn">Reserve</a>
 
                         </div>
                         <div className="col-md-6">
