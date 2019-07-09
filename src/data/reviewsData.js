@@ -1,4 +1,4 @@
-export const reviewsInfo = [
+const reviewsData = [
     {
       company: 'The Food Network',
       review: 'The Atlanta Bistro exemplifies amazing service and good quality. We inspected the quality of the menu and the cleanliness of the kitchen. The chef seems to make sure that the dishes offered are of the highest quality. The dining area is sleek and modern, perfect for the Atlanta scene.',
@@ -35,3 +35,5 @@ export const reviewsInfo = [
       highlight: '"Amazing Dining experience for all!"'
     },
   ]
+
+  export default reviewsData;
