@@ -7,15 +7,18 @@ class Reviews extends Component {
     }
 
     reviewRight = () => {
+      if(this.state.currentReview < 4)
         this.setState({
           currentReview: this.state.currentReview + 1
         });
     }
 
     reviewLeft = () => {
+      if(this.state.currentReview > 0){
         this.setState({
           currentReview: this.state.currentReview - 1
         });
+      }
     }
 
     currentReviewDisplay = (props) => {
@@ -34,17 +37,17 @@ class Reviews extends Component {
     }
     
     leftClick = (props) => {
-        if(this.currentReview === 0 ) {
-          console.log('do nothing')
-        } else {
-          console.log(this.reviewRight);
-        }
+        
+          this.reviewLeft();
+       
       }
     
-      rightClick = (props) => {
-        if(this.currentReview === (this.props.reviewData - 1)) {
-          console.log('do nothing')
-        } 
+      rightClick = (props, ) => {
+        if(this.currentReview > 4) {
+          console.log('do nothing');
+        } else {
+          this.reviewRight();
+        }
       }
 
       
@@ -62,13 +65,10 @@ class Reviews extends Component {
                         <div className="col-md-4">
                             {this.currentReviewDisplay()}
                             <div className="arrows">
-                              <button onClick={this.leftClick} >
-                                <i  className={`fa fa-arrow-left ${(currentReview > 0) ? 'ready' : ''}`}></i>
-                              </button>
-                              
-                              <button onClick={this.rightClick}>
-                                <i  className={`fa fa-arrow-right ${(currentReview === (this.props.reviewsData - 1)) ? '' : 'ready'}`}></i>
-                              </button>
+                             
+                                <i  onClick={this.leftClick} className={`fa fa-arrow-left ${(currentReview > 0) ? 'ready' : ''}`}></i>
+                                <i  onClick={this.rightClick} className={`fa fa-arrow-right ${(currentReview === 4) ? '' : 'ready'}`}></i>
+                
                             </div>
                         </div>
                     </div>

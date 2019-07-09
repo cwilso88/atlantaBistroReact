@@ -33,7 +33,7 @@ const reviewsData = [
       author: 'Ben Leventhal',
       authorInfo: 'Winner Of Atlanta Best Chef',
       highlight: '"Amazing Dining experience for all!"'
-    },
+    }
   ]
 
   export default reviewsData;
