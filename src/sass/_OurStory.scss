@@ -1,50 +1,42 @@
-header {
-    position: absolute;
-    width: 100%;
-    color: white;
-    padding: 20px;
-    z-index: 20;
+#OurStory {
+    padding: 100px 0;
 
-    .logo {
-        display: inline-block;
-    }
+   .quote {
+       color: grey;
+       margin: 0.5rem 0 3rem;
 
-    .logo-header {
-        text-align: center;
-    }
-
-    .logo-text {
-        background-color: white;
-        padding: 5px; 
-    }
-
-
-    nav {
-        display: inline-block;
-        float: right;
-        text-align: right;
-        
-        a {
-            display: inline-block;
-            color: white;
-            text-decoration: none;
-            padding: 0 10px;
-            &:hover {
-                color: grey;
-            }
-        }
-    }
-
-    .video-img {
-        max-width: 550px;
-        height: 500px;
-        background: linear-gradient(135deg, rgba(0,0,0,.2) 0,#000 100%);
-        background-image: linear-gradient(135deg, rgba(0,0,0,.2) 0,#000 100%), url('https://www.musson.be/evenements/unnamed.jpg/@@images/image.jpeg');
-        background-position: center;
-        background-size: cover;
-        margin: 0 auto;
-        -webkit-box-shadow: 0px -1px 16px 7px rgba(0,0,0,0.58);
-        -moz-box-shadow: 0px -1px 16px 7px rgba(0,0,0,0.58);
-        box-shadow: 0px -1px 16px 7px rgba(0,0,0,0.58);
+       strong{
+        color: black;
+        font-weight: 700;
        }
+   }
+   .reserve-btn {
+       font-family: $displayFont;
+       display: inline-block;
+       padding: 20px 40px;
+       border: 1px solid #000;
+       text-align: center;
+       text-decoration: none;
+       color: black;
+       text-transform: uppercase;
+       transition: all .5s ease-in-out;
+       
+       &:hover {
+           background:rgba(202, 4, 2, .8);
+           color: black;
+       }
+   }
+
+   .video-img {
+    max-width: 550px;
+    height: 500px;
+    background: linear-gradient(135deg, rgba(0,0,0,.2) 0,#000 100%);
+    background-image: linear-gradient(135deg, rgba(0,0,0,.2) 0,#000 100%), url('https://www.musson.be/evenements/unnamed.jpg/@@images/image.jpeg');
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+    -webkit-box-shadow: 0px -1px 16px 7px rgba(0,0,0,0.58);
+    -moz-box-shadow: 0px -1px 16px 7px rgba(0,0,0,0.58);
+    box-shadow: 0px -1px 16px 7px rgba(0,0,0,0.58);
+   }
 }
