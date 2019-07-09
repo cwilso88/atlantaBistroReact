@@ -1,39 +1,50 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import reviewsData from '../data/reviewsData';
 
 class Reviews extends Component {
     state = {
         currentReview: 0
     }
+
+    reviewRight = () => {
+        this.setState(
+            { currentReview: this.state.currentReview + 1 }
+        );
+    }
     
-    leftClick = (state, props) => {
-        if(state.globalState.currentReview == 0 ) {
+    leftClick = (props) => {
+        if(this.currentReview === 0 ) {
           console.log('do nothing')
         } else {
-          reviewLeft();
+          console.log(this.reviewRight);
         }
       }
     
-      rightClick = (state, props) => {
-        if(state.globalState.currentReview == (reviewIndex - 1)) {
+      rightClick = (props) => {
+        if(this.currentReview === (this.props.reviewData - 1)) {
           console.log('do nothing')
         } 
       }
 
-      currentReviewDisplay = (state, actions) => {
-        return (
+      currentReviewDisplay = (props) => {
+          const { currentReview } = this.state;
+        
+          return (
           <div>
             <h5 className="reviews-title">Reviews</h5>
-            <h2>{reviewInfo[currentReview].company}</h2>
-            <h4>{reviewInfo[currentReview].highlight}</h4>
-            <p>{reviewInfo[currentReview].review}</p>
+            <h2>{reviewsData[currentReview].company}</h2>
+            <h4>{reviewsData[currentReview].highlight}</h4>
+            <p>{reviewsData[currentReview].review}</p>
           
-            <div className="author"><strong>{reviewInfo[currentReview].author}</strong>- <em>{reviewInfo[currentReview].authorInfo}</em></div>
+            <div className="author"><strong>{reviewsData[currentReview].author}</strong>- <em>{reviewsData[currentReview].authorInfo}</em></div>
           </div>
         )
       }
 
     render() {
-        return (
+          const { currentReview } = this.state;
+        
+          return (
             <section id="Reviews">
                 <div className="container">
                     <div className="row">
@@ -43,8 +54,8 @@ class Reviews extends Component {
                         <div className="col-md-4">
                             {this.currentReviewDisplay()}
                             <div className="arrows">
-                                <i onclick={() => console.log(state.globalState.currentReview - 1)} class={`fa fa-arrow-left ${(currentReview > 0) ? 'ready' : ''}`}></i>
-                                <i onclick={() => console.log(state.globalState.currentReview + 1)} class={`fa fa-arrow-right ${(currentReview == (reviewIndex - 1)) ? '' : 'ready'}`}></i>
+                                <i onClick={() => console.log(currentReview - 1)} className={`fa fa-arrow-left ${(currentReview > 0) ? 'ready' : ''}`}></i>
+                                <i onClick={() => console.log(currentReview + 1)} className={`fa fa-arrow-right ${(currentReview === (this.props.reviewsData - 1)) ? '' : 'ready'}`}></i>
                             </div>
                         </div>
                     </div>
