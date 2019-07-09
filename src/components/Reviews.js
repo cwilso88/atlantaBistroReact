@@ -7,9 +7,30 @@ class Reviews extends Component {
     }
 
     reviewRight = () => {
-        this.setState(
-            { currentReview: this.state.currentReview + 1 }
-        );
+        this.setState({
+          currentReview: this.state.currentReview + 1
+        });
+    }
+
+    reviewLeft = () => {
+        this.setState({
+          currentReview: this.state.currentReview - 1
+        });
+    }
+
+    currentReviewDisplay = (props) => {
+      const { currentReview } = this.state;
+    
+      return (
+        <div>
+          <h5 className="reviews-title">Reviews</h5>
+          <h2>{reviewsData[currentReview].company}</h2>
+          <h4>{reviewsData[currentReview].highlight}</h4>
+          <p>{reviewsData[currentReview].review}</p>
+        
+          <div className="author"><strong>{reviewsData[currentReview].author}</strong>- <em>{reviewsData[currentReview].authorInfo}</em></div>
+        </div>
+      )
     }
     
     leftClick = (props) => {
@@ -26,20 +47,7 @@ class Reviews extends Component {
         } 
       }
 
-      currentReviewDisplay = (props) => {
-          const { currentReview } = this.state;
-        
-          return (
-          <div>
-            <h5 className="reviews-title">Reviews</h5>
-            <h2>{reviewsData[currentReview].company}</h2>
-            <h4>{reviewsData[currentReview].highlight}</h4>
-            <p>{reviewsData[currentReview].review}</p>
-          
-            <div className="author"><strong>{reviewsData[currentReview].author}</strong>- <em>{reviewsData[currentReview].authorInfo}</em></div>
-          </div>
-        )
-      }
+      
 
     render() {
           const { currentReview } = this.state;
