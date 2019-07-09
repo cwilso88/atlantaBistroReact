@@ -62,8 +62,13 @@ class Reviews extends Component {
                         <div className="col-md-4">
                             {this.currentReviewDisplay()}
                             <div className="arrows">
-                                <i onClick={() => console.log(currentReview - 1)} className={`fa fa-arrow-left ${(currentReview > 0) ? 'ready' : ''}`}></i>
-                                <i onClick={() => console.log(currentReview + 1)} className={`fa fa-arrow-right ${(currentReview === (this.props.reviewsData - 1)) ? '' : 'ready'}`}></i>
+                              <button onClick={this.leftClick} >
+                                <i  className={`fa fa-arrow-left ${(currentReview > 0) ? 'ready' : ''}`}></i>
+                              </button>
+                              
+                              <button onClick={this.rightClick}>
+                                <i  className={`fa fa-arrow-right ${(currentReview === (this.props.reviewsData - 1)) ? '' : 'ready'}`}></i>
+                              </button>
                             </div>
                         </div>
                     </div>
